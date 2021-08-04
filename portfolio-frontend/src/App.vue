@@ -45,7 +45,9 @@
 		methods: {
 			showModal() {
 				this.$router.push('/')
-				document.getElementById('myModal').style.display = 'block'
+				setTimeout(() => {
+					document.getElementById('myModal').style.display = 'block'
+				}, 300)
 			}
 		}
 	}

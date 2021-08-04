@@ -1,7 +1,7 @@
 <template>
 <div id="portfolio">
 	<!-- English Version -->
-
+	
 	<!-- Hire Me English Modal -->
 
 	<div id="myModal" class="modal">
@@ -141,7 +141,7 @@
 							<div class="col-md-6">
 								<h2 class="h3 mb-3">About Me</h2>
 								<p>
-									Hi, I'm Alireza. I was born in 2002 July, 25 in my beautiful
+									Hi, I'm Alireza. I was born in July 25th, 2002 in my beautiful
 									city, Shiraz. I'm a Full-stack Web Developer and a passionate
 									automated bots designer. I'm also student of Software
 									Engineering at Shiraz Azad University .
