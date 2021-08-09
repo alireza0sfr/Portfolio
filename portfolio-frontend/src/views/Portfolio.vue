@@ -765,10 +765,10 @@
 				// When the user clicks anywhere outside of the modal, close it
 				window.onclick = function (event) {
 					if (event.target == modal) {
-						$(`#myModal`).addClass('close')
+						$(`#myModal`).addClass('close') // trigerring modal animation
 						setTimeout(() => {
-							$('#myModal').css('display', 'none')
-							$('.hamburger-overlay').removeClass('is-active')
+							$('#myModal').css('display', 'none') // close the modal 
+							$('.hamburger-overlay').removeClass('is-active') // remove the overlay
 						}, 400);
 					}
 				}

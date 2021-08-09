@@ -16,7 +16,8 @@
 								<router-link to="/" class="navbar-brand">Projects</router-link>
 							</li>
 							<li class="nav-item pb-1 pt-1">
-								<a data-bs-toggle="collapse" data-bs-target="#navmenu" @click="showModal()" style="cursor: pointer" class="navbar-brand">Hire Me</a>
+								<a @click="showModal()" style="cursor: pointer" class="navbar-brand d-none d-sm-inline">Hire Me</a> <!-- mobile view has its own button -->
+								<a data-bs-toggle="collapse" data-bs-target="#navmenu" @click="showModal()" style="cursor: pointer" class="navbar-brand d-sm-none">Hire Me</a>
 							</li>
 							<li class="nav-item pb-1 pt-1">
 								<a href="../assets/alireza-safari-resume.pdf" target="_blank" class="navbar-brand">Download CV</a>
@@ -40,7 +41,7 @@
 				this.$router.push('/')
 				
 				$(`#myModal`).removeClass('close')
-				document.getElementById('myModal').style.display = 'block'
+				$(`#myModal`).css('display', 'block')
 				
 			},
 			overlayToggler() {
