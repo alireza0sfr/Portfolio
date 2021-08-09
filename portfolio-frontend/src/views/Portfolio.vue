@@ -215,6 +215,7 @@
 										</div>
 									</div>
 								</div>
+								<pf-card :options="componentOptions[0]" />
 								<div class="timeline-card timeline-card-primary card shadow-sm">
 									<div class="card-body">
 										<div class="h5 mb-1">
@@ -703,9 +704,7 @@
 	export default {
 		name: 'Portfolio',
 		mounted() {
-
-			document.title = 'Alireza Safari'
-
+			
 			AOS.init({
 				anchorPlacement: 'top-left',
 				duration: 1000
@@ -728,7 +727,32 @@
 		data() {
 			return {
 				isPersian: false,
-				birthYear: 2002
+				birthYear: 2002,
+				componentOptions: [
+					{
+					position: {
+						value: 'Frontend Developer'
+					},
+					place: {
+						value: 'Nikan',
+					},
+					link: {
+						value: 'https://nikansoft.com',
+						target: '_blank'
+					},
+					startDate: {
+						value: '5/1/2010'
+					},
+					type: {
+						value: 'Full-Time'
+					},
+					description: {
+						value: "Nikan is a windows accounting software. Nikan develop team and I are currently working on the Nikan Web version Using Vue.js, .NET Core, Bootstrap."
+					},
+					color:{
+						value: 'primary'
+					}
+					}]
 			}
 		},
 
@@ -741,12 +765,17 @@
 				// When the user clicks anywhere outside of the modal, close it
 				window.onclick = function (event) {
 					if (event.target == modal) {
-						modal.style.display = "none"
+						$(`#myModal`).addClass('close')
+						setTimeout(() => {
+							$('#myModal').css('display', 'none')
+							$('.hamburger-overlay').removeClass('is-active')
+						}, 400);
 					}
 				}
 			},
 			showModal() {
-				document.getElementById('myModal').style.display = 'block'
+				$(`#myModal`).removeClass('close')
+				$('#myModal').css('display', 'block')
 			},
 			toLocalDigits(n) {
       const farsiDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"]
@@ -758,8 +787,8 @@
 </script>
 
 <style scoped>
-	@import "../assets/css/portfolio styles/bootstrap.min.css";
-	@import "../assets/css/portfolio styles/portfolio.css";
+	@import "../assets/css/portfolio-styles/bootstrap.min.css";
+	@import "../assets/css/portfolio-styles/portfolio.css";
 	@import "../assets/css/font-awesome/css/all.min.css";
 	@import "../assets/css/modal.css";
 </style>

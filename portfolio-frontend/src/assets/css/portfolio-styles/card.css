@@ -1,0 +1,12 @@
+.timeline-card-primary:after {
+  background-color: #4A89DC;
+}
+.timeline-card-primary:before {
+  border-color: #4A89DC;
+}
+.timeline-card-success:after {
+  background-color: #4A89DC;
+}
+.timeline-card-sucess:before {
+  border-color: #4A89DC;
+}
