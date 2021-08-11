@@ -1,5 +1,17 @@
 <template>
 	<div id="app">
+		<div class="loading-overlay">
+			<div class="loading-spinner">
+				<!-- Spinner -->
+
+				<div class="sk-chase">
+					<div class="sk-chase-dot"></div>
+					<div class="sk-chase-dot"></div>
+					<div class="sk-chase-dot"></div>
+					<div class="sk-chase-dot"></div>
+				</div>
+			</div>
+		</div>
 		<div class="hamburger-overlay" data-bs-toggle="collapse" data-bs-target="#navmenu" @click="overlayToggler()"></div>
 		<div id="nav">
 			<!-- Navbar -->
@@ -35,6 +47,9 @@
 	import '../node_modules/bootstrap/dist/js/bootstrap.bundle'
 	export default {
 		name: 'App',
+		mounted() {
+
+		},
 		methods: {
 			showModal() {
 				this.overlayToggler()
@@ -53,21 +68,6 @@
 
 <style>
 	@import "../node_modules/bootstrap/dist/css/bootstrap.css";
-	
-	.hamburger-overlay {
-	background: hsl(218deg 13% 34% / 38%);
-  display: none;
-  z-index: 100;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.hamburger-overlay.is-active {
-  display: block;
-}
+	@import './assets/css/site.css';
+	@import './assets/css/spinner.css';
 </style>

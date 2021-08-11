@@ -199,92 +199,7 @@
 						<div class="work-experience-section px-3 px-lg-4">
 							<h2 class="h3 mb-4">Work Experience</h2>
 							<div class="timeline">
-								<div class="timeline-card timeline-card-primary card shadow-sm">
-									<div class="card-body">
-										<div class="h5 mb-1">
-											Frontend Developer
-											<span class="text-muted h6">
-												at
-												<a href="https://nikansoft.com/" style="text-decoration: none" target="_blank">Nikan</a>
-											</span>
-										</div>
-										<div class="text-muted text-small mb-2">June, 2021 - Present | Full-Time</div>
-										<div>
-											Nikan is a windows accounting software. I'm currently
-											working on the Nikan Web version Using Vue.js, Bootstrap.
-										</div>
-									</div>
-								</div>
-								<pf-card :options="componentOptions[0]" />
-								<div class="timeline-card timeline-card-primary card shadow-sm">
-									<div class="card-body">
-										<div class="h5 mb-1">
-											Frontend Developer
-											<span class="text-muted h6">
-												at
-												<a href="https://cafepay.app/" style="text-decoration: none" target="_blank">Cafepay</a>
-											</span>
-										</div>
-										<div class="text-muted text-small mb-2">April, 2021 - Present | Part-Time</div>
-										<div>
-											Cafepay is a startup that helps people ordering and booking
-											at popular Cafes.I'm helping the developer team to maintain
-											the webapp and add new features to it using Vue.js, Nuxt,js,
-											Bootstrap.
-										</div>
-									</div>
-								</div>
-								<div class="timeline-card timeline-card-primary card shadow-sm">
-									<div class="card-body">
-										<div class="h5 mb-1">
-											Automated Bots Developer
-											<span class="text-muted h6">
-												at
-												<a href="https://utabpars.com/" style="text-decoration: none" target="_blank">UtabPars</a>
-											</span>
-										</div>
-										<div class="text-muted text-small mb-2">April, 2021 - June 2021 | Freelance</div>
-										<div>
-											At UtabPars I built several data scarping bots using Python
-											to extract data from popular Persian sites and built a
-											database out of it.
-										</div>
-									</div>
-								</div>
-								<div class="timeline-card timeline-card-primary card shadow-sm">
-									<div class="card-body">
-										<div class="h5 mb-1">
-											Automated Bots Developer
-											<span class="text-muted h6">
-												at
-												<a href="https://artacode.ir" style="text-decoration: none" target="_blank">Artacode</a>
-											</span>
-										</div>
-										<div class="text-muted text-small mb-2">September, 2020 - June, 2021 | Freelance</div>
-										<div>
-											Built automated robots using python such as data scraper,
-											social media scraper, telegram bots, stock trader bots and
-											etc.
-										</div>
-									</div>
-								</div>
-								<div class="timeline-card timeline-card-primary card shadow-sm">
-									<div class="card-body">
-										<div class="h5 mb-1">
-											Full Stack Developer
-											<span class="text-muted h6">
-												at
-												<a href="https://ponisha.ir/profile/alireza.safari" style="text-decoration: none" target="_blank">Ponisha</a>
-											</span>
-										</div>
-										<div class="text-muted text-small mb-2">August, 2020 - May, 2021 | Freelance</div>
-										<div>
-											I started by translating and creating SEO friendly contents
-											then continued by making automated bots and then Used to
-											build and maintain websites using Django, Vue.js, Bootstrap
-										</div>
-									</div>
-								</div>
+								<pf-card v-for="(option, index) in workXPOptions" :key="index" :options="option"/>
 							</div>
 						</div>
 						<hr class="d-print-none" />
@@ -704,11 +619,15 @@
 	export default {
 		name: 'Portfolio',
 		mounted() {
-			
-			AOS.init({
+
+			setTimeout(() => {
+				$('.loading-overlay').addClass('collapsed')
+
+				AOS.init({
 				anchorPlacement: 'top-left',
-				duration: 1000
-			})
+				duration: 1000})
+
+			}, 1);
 
 			this.modalFunc()
 		},
@@ -728,7 +647,7 @@
 			return {
 				isPersian: false,
 				birthYear: 2002,
-				componentOptions: [
+				workXPOptions: [
 					{
 					position: {
 						value: 'Frontend Developer'
@@ -741,7 +660,10 @@
 						target: '_blank'
 					},
 					startDate: {
-						value: '5/1/2010'
+						value: '5/1/2021'
+					},
+					endDate: {
+						value: 'Present'
 					},
 					type: {
 						value: 'Full-Time'
@@ -752,7 +674,116 @@
 					color:{
 						value: 'primary'
 					}
-					}]
+					},
+					{
+					position: {
+						value: 'Frontend Developer'
+					},
+					place: {
+						value: 'Cafepay',
+					},
+					link: {
+						value: 'https://cafepay.app/',
+						target: '_blank'
+					},
+					startDate: {
+						value: '4/1/2021'
+					},
+					endDate: {
+						value: 'Present'
+					},
+					type: {
+						value: 'Freelance'
+					},
+					description: {
+						value: "Cafepay is a startup that helps people ordering and booking at popular Cafes.I'm helping the developer team to maintain the webapp and add new features to it using Vue.js, Nuxt,js, Bootstrap."
+					},
+					color:{
+						value: 'primary'
+					}
+					},
+					{
+					position: {
+						value: 'Automated Bots Developer'
+					},
+					place: {
+						value: 'UtabPars',
+					},
+					link: {
+						value: 'https://utabpars.com/',
+						target: '_blank'
+					},
+					startDate: {
+						value: '4/1/2021'
+					},
+					endDate: {
+						value: '5/1/2021'
+					},
+					type: {
+						value: 'Freelance'
+					},
+					description: {
+						value: "At UtabPars I built several data scarping bots using Python to extract data from popular Persian sites and built a database out of it."
+					},
+					color:{
+						value: 'primary'
+					}
+					},
+					{
+					position: {
+						value: 'Automated Bots Developer'
+					},
+					place: {
+						value: 'Artacode',
+					},
+					link: {
+						value: 'https://artacode.ir/',
+						target: '_blank'
+					},
+					startDate: {
+						value: '4/1/2021'
+					},
+					endDate: {
+						value: '5/1/2021'
+					},
+					type: {
+						value: 'Freelance'
+					},
+					description: {
+						value: "Built automated robots using python such as data scraper, social media scraper, telegram bots, stock trader bots and etc."
+					},
+					color:{
+						value: 'primary'
+					}
+					},
+					{
+					position: {
+						value: 'Full Stack Developer'
+					},
+					place: {
+						value: 'Ponisha',
+					},
+					link: {
+						value: 'https://ponisha.ir/profile/alireza.safari',
+						target: '_blank'
+					},
+					startDate: {
+						value: '8/1/2020'
+					},
+					endDate: {
+						value: '5/1/2021'
+					},
+					type: {
+						value: 'Freelance'
+					},
+					description: {
+						value: "I started by translating and creating SEO friendly contents then continued by making automated bots and then Used to build and maintain websites using Django, Vue.js, Bootstrap"
+					},
+					color:{
+						value: 'primary'
+					}
+					}
+				],
 			}
 		},
 
