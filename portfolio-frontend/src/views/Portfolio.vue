@@ -1,14 +1,13 @@
 <template>
 	<div id="portfolio">
-		<!-- English Version -->
 
-		<!-- Hire Me English Modal -->
+		<!-- Hire Me Modal -->
+		<div id="hire-me" class="modal">
 
-		<div id="myModal" class="modal">
 			<!-- Modal content -->
 			<div class="modal-content">
-				<div class="contant-section px-3 px-lg-4 pb-4">
-					<h2 class="h3 text mb-3">Contact</h2>
+				<div class="contant-section px-3 px-lg-4">
+					<h2 class="h3 text mb-1">Contact</h2>
 					<div class="row">
 						<div style="width:100%;" class="col-md-7 d-print-none">
 							<div class="my-2">
@@ -24,7 +23,7 @@
 									<div class="form-group my-2">
 										<textarea class="form-control" style="resize: none" id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
 									</div>
-									<button class="btn btn-primary mt-2" type="submit">Send</button>
+									<button class="btn btn-primary mt-2 rounded-3" type="submit">Send</button>
 								</form>
 							</div>
 						</div>
@@ -33,7 +32,58 @@
 			</div>
 		</div>
 
-		<body v-if="isPersian == false" id="portfolio-english">
+		<!-- Button trigger modal -->
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+			Sign Up
+		</button>
+
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-body">
+						<div class="column" id="main">
+							<h1>Sign Up </h1>
+							<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+							<form>
+								<div class="form-group">
+									<label for="exampleInputName">Name</label>
+									<input type="name" class="form-control" id="exampleInputName" placeholder="Name">
+								</div>
+								<div class="form-group">
+									<label for="exampleInputEmail1">E-mail </label>
+									<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail">
+								</div>
+								<div class="form-group">
+									<label for="exampleInputPassword1">Password</label>
+									<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+								</div>
+								<button type="submit" class="btn btn-primary">Sign Up</button>
+							</form>
+						</div>
+						<div>
+							<svg width="67px" height="578px" viewBox="0 0 67 578" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+								<!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+								<title>Path</title>
+								<desc>Created with Sketch.</desc>
+								<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+									<path d="M11.3847656,-5.68434189e-14 C-7.44726562,36.7213542 5.14322917,126.757812 49.15625,270.109375 C70.9827986,341.199016 54.8877465,443.829224 0.87109375,578 L67,578 L67,-5.68434189e-14 L11.3847656,-5.68434189e-14 Z" id="Path" fill="#F9BC35"></path>
+								</g>
+							</svg>
+						</div>
+						<div class="column" id="secondary">
+							<div class="sec-content">
+								<h2>Welcome Back!</h2>
+								<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+								<button type="button" class="btn btn-primary">Login</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<body id="portfolio-english">
 			<header class="d-print-none">
 				<div class="container text-center text-lg-left mt-5">
 					<div class="clearfix">
@@ -64,12 +114,6 @@
 											<span class="menu-title sr-only">Github</span>
 										</a>
 									</li>
-									<li class="nav-item">
-										<a class="nav-link" @click="isPersian = !isPersian" title="Persian" style="cursor: pointer">
-											<i class="fas fa-language"></i>
-											<span class="menu-title sr-only">Persian</span>
-										</a>
-									</li>
 								</ul>
 							</nav>
 						</div>
@@ -91,7 +135,7 @@
 									<p data-aos="fade-left" data-aos-delay="100">Full Stack Developer</p>
 									<div class="d-print-none btn-container" data-aos="fade-left" data-aos-delay="200">
 										<a class="btn btn-light text-dark shadow-sm mt-1 me-1" href="../assets/alireza-safari-resume.pdf" target="_blank">Download CV</a>
-										<a class="btn btn-success shadow-sm mt-1 hire" @click="showModal()">Hire Me</a>
+										<a class="btn btn-success shadow-sm mt-1 hire" @click="showModal('hire-me')">Hire Me</a>
 									</div>
 								</div>
 							</div>
@@ -199,7 +243,7 @@
 						<div class="work-experience-section px-3 px-lg-4">
 							<h2 class="h3 mb-4">Work Experience</h2>
 							<div class="timeline">
-								<pf-card v-for="(option, index) in workXPOptions" :key="index" :options="option"/>
+								<pf-card v-for="(option, index) in workXPOptions" :key="index" :options="option" />
 							</div>
 						</div>
 						<hr class="d-print-none" />
@@ -280,336 +324,6 @@
 				</div>
 			</footer>
 		</body>
-
-		<!-- Persian Version -->
-
-		<body v-else id="top">
-			<header class="d-print-none">
-				<div class="container text-center text-lg-left mt-5">
-					<div class="clearfix">
-						<div class="site-nav">
-							<nav role="navigation">
-								<ul class="nav justify-content-center">
-									<li class="nav-item">
-										<a class="nav-link" href="https://twitter.com/Alireza0sfr" target="_blank" title="Twitter">
-											<i class="fab fa-twitter"></i>
-											<span class="menu-title sr-only">Twitter</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" href="https://www.linkedin.com/in/alireza-safari-3b23231bb/" target="_blank" title="Linkedin">
-											<i class="fab fa-linkedin"></i>
-											<span class="menu-title sr-only">Linkedin</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" href="https://www.instagram.com/alireza0sfr" target="_blank" title="Instagram">
-											<i class="fab fa-instagram"></i>
-											<span class="menu-title sr-only">Instagram</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" href="https://github.com/alireza0sfr" target="_blank" title="Github">
-											<i class="fab fa-github"></i>
-											<span class="menu-title sr-only">Github</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" style="cursor: pointer" @click="isPersian = !isPersian" title="English">
-											<i class="fas fa-language"></i>
-											<span class="menu-title sr-only">English</span>
-										</a>
-									</li>
-								</ul>
-							</nav>
-						</div>
-					</div>
-				</div>
-			</header>
-			<div class="page-content">
-				<div class="container">
-					<div class="cover shadow-lg bg-white">
-						<div class="cover-bg p-3 p-lg-4 text-white">
-							<div class="row">
-								<div class="col-lg-4 col-md-5">
-									<div class="avatar hover-effect bg-white shadow-sm p-1" style="margin-top: -20px;">
-										<img src="../assets/images/avatar.jpg" width="200" height="200" />
-									</div>
-								</div>
-								<div class="col-lg-8 col-md-7 text-center text-md-start">
-									<h2 class="h1 mt-2" data-aos="fade-left" data-aos-delay="0">علیرضا صفری</h2>
-									<p data-aos="fade-left" data-aos-delay="100">برنامه نویس فول استک</p>
-									<div class="d-print-none" data-aos="fade-left" data-aos-delay="200">
-										<a class="btn btn-light text-dark shadow-sm mt-1 me-1" href="../assets/alireza-safari-resume.pdf" target="_blank">دانلود روزمه</a>
-										<a class="btn btn-success shadow-sm mt-1" @click="showModal()">استخدام کنید</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="about-section pt-4 px-3 px-lg-4 mt-1">
-							<div class="row">
-								<div class="col-md-6">
-									<h2 style="text-align: right" class="h3 mb-3">درباره من</h2>
-									<p style="text-align: right">
-										سلام من علیرضا هستم در ۳ مرداد ۱۳۸۱ در شهر زیبای شیراز متولد
-										شدم یک برنامه نویس فول استک هستم و علاقه مند به طراحی ربات های
-										اتوماتیک. همچنین در حال تحصیل مهندسی کامپیوتر گرایش نرم افزار
-										در دانشگاه ازاد شیراز هستم
-									</p>
-								</div>
-								<div class="col-md-5 offset-md-1">
-									<div class="row mt-2">
-										<div class="col-sm-4">
-											<div class="pb-1">سن</div>
-										</div>
-										<div class="col-sm-8">
-											<div class="pb-1 text-secondary">{{toLocalDigits(age)}}</div>
-										</div>
-										<div class="col-sm-4">
-											<div class="pb-1">ایمیل</div>
-										</div>
-										<div class="col-sm-8">
-											<div class="pb-1 text-secondary">alireza.safaree@gmail.com</div>
-										</div>
-										<div class="col-sm-4">
-											<div class="pb-1">شماره</div>
-										</div>
-										<div class="col-sm-8">
-											<div class="pb-1 text-secondary">۰۹۰۳۴۱۷۱۱۹۰</div>
-										</div>
-										<div class="col-sm-4">
-											<div class="pb-1">آدرس</div>
-										</div>
-										<div class="col-sm-8">
-											<div style="text-align: left" class="pb-1 text-secondary">فارس شیراز</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<hr class="d-print-none" />
-						<div class="skills-section px-3 px-lg-4">
-							<h2 style="text-align: right" class="h3 mb-3">مهارت های حرفه ای</h2>
-							<div class="row">
-								<div class="col-md-6">
-									<div class="mb-2">
-										<span>HTML / CSS</span>
-										<div class="progress my-1">
-											<div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="100" data-aos-anchor=".skills-section" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-										</div>
-									</div>
-									<div class="mb-2">
-										<span>Bootstrap</span>
-										<div class="progress my-1">
-											<div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="200" data-aos-anchor=".skills-section" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-										</div>
-									</div>
-									<div class="mb-2">
-										<span>JavaScript</span>
-										<div class="progress my-1">
-											<div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="300" data-aos-anchor=".skills-section" style="width: 80%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-										</div>
-									</div>
-									<div class="mb-2">
-										<span>Vue.JS</span>
-										<div class="progress my-1">
-											<div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="100" data-aos-anchor=".skills-section" style="width: 80%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="mb-2">
-										<span>Python</span>
-										<div class="progress my-1">
-											<div class="progress-bar bg-success" role="progressbar" data-aos="zoom-in-right" data-aos-delay="400" data-aos-anchor=".skills-section" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-										</div>
-									</div>
-									<div class="mb-2">
-										<span>Django</span>
-										<div class="progress my-1">
-											<div class="progress-bar bg-success" role="progressbar" data-aos="zoom-in-right" data-aos-delay="400" data-aos-anchor=".skills-section" style="width: 80%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-										</div>
-									</div>
-									<div class="mb-2">
-										<span>Git</span>
-										<div class="progress my-1">
-											<div class="progress-bar bg-success" role="progressbar" data-aos="zoom-in-right" data-aos-delay="500" data-aos-anchor=".skills-section" style="width: 80%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-										</div>
-									</div>
-									<div class="mb-2">
-										<span>Nuxt.js</span>
-										<div class="progress my-1">
-											<div class="progress-bar bg-success" role="progressbar" data-aos="zoom-in-right" data-aos-delay="600" data-aos-anchor=".skills-section" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<hr class="d-print-none" />
-						<div class="work-experience-section px-3 px-lg-4">
-							<h2 style="text-align: right" class="h3 mb-4">تجربه کاری</h2>
-							<div style="text-align: right" class="timeline">
-								<div class="timeline-card timeline-card-primary card shadow-sm">
-									<div class="card-body">
-										<div class="h5 mb-1">
-											برنامه نویس فرانت
-											<span class="text-muted h6">
-												در
-												<a href="https://nikansoft.com/" style="text-decoration: none" target="_blank">نیکان</a>
-											</span>
-										</div>
-										<div class="text-muted text-small mb-2">خرداد ۱۴۰۰ - حالا | تمام وقت</div>
-										<div>
-											نیکان یک برنامه ی ویندوزی برای حسابداری است و من در حال
-											توسعه ورژن وب نیکان با استفاده از ویو, بوت استرپ هستم
-										</div>
-									</div>
-								</div>
-								<div class="timeline-card timeline-card-primary card shadow-sm">
-									<div class="card-body">
-										<div class="h5 mb-1">
-											برنامه نویس فرانت
-											<span class="text-muted h6">
-												در
-												<a href="https://cafepay.app/" style="text-decoration: none" target="_blank">کافه پی</a>
-											</span>
-										</div>
-										<div class="text-muted text-small mb-2">فروردین ۱۴۰۰ - حالا | پاره وقت</div>
-										<div>
-											کافه پی استارتاپی است که به افراد در سفارش و رزرو در کافه
-											های معروف کمک می کند. من به تیم توسعه دهنده کمک می کنم تا وب
-											اپ را حفظ کند و با استفاده از ویو ، ناکست ، بوت استرپ ویژگی
-											های جدیدی به آن اضافه کند
-										</div>
-									</div>
-								</div>
-								<div class="timeline-card timeline-card-primary card shadow-sm">
-									<div class="card-body">
-										<div class="h5 mb-1">
-											طراح ربات های اتوماتیک
-											<span class="text-muted h6">
-												در
-												<a href="https://utabpars.com/" style="text-decoration: none" target="_blank">یوتاب پارس</a>
-											</span>
-										</div>
-										<div class="text-muted text-small mb-2">فروردین ۱۴۰۰ - تیر ۱۴۰۰ | فریلنسری</div>
-										<div>
-											در یوتاب پارس من با استفاده از پایتون برای استخراج داده ها
-											از سایت های معروف فارسی چندین ربات استخراج داده طراحی کردم و
-											از آن پایگاه داده ساختم
-										</div>
-									</div>
-								</div>
-								<div class="timeline-card timeline-card-primary card shadow-sm">
-									<div class="card-body">
-										<div class="h5 mb-1">
-											طراح ربات های اتوماتیک
-											<span class="text-muted h6">
-												در
-												<a href="https://artacode.ir" style="text-decoration: none" target="_blank">آرتاکد</a>
-											</span>
-										</div>
-										<div class="text-muted text-small mb-2">مهر ۱۳۹۹ - خرداد ۱۴۰۰ | فریلنسری</div>
-										<div>
-											ساخت روبات های خودکار با استفاده از پایتون مانند: خزشگر شبکه
-											های اجتماعی، ربات های تلگرامی، ربات های معامله گر سهام و
-											غیره
-										</div>
-									</div>
-								</div>
-								<div class="timeline-card timeline-card-primary card shadow-sm">
-									<div class="card-body">
-										<div class="h5 mb-1">
-											برنامه نویس فول استک
-											<span class="text-muted h6">
-												در
-												<a href="https://ponisha.ir/profile/alireza.safari" style="text-decoration: none" target="_blank">پونیشا</a>
-											</span>
-										</div>
-										<div class="text-muted text-small mb-2">شهریور ۱۳۹۹ - اردیبهشت ۱۴۰۰ | فریلنسری</div>
-										<div>
-											در ابتدا به تهیه و ترجمه محتوای سئو شده پرداختم و سپس به
-											توسعه ربات های اتوماتیک و در آخر به ساخت و پشتیبانی وبسایت
-											ها به وسیله ی: جنگو, ویو , بوت استرپ
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<hr class="d-print-none" />
-						<div class="page-break"></div>
-						<div class="education-section px-3 px-lg-4 pb-4">
-							<h2 style="text-align: right" class="h3 mb-4">تحصیلات</h2>
-							<div style="text-align: right" class="timeline">
-								<div class="timeline-card timeline-card-success card shadow-sm">
-									<div class="card-body">
-										<div class="h5 mb-1">
-											کارشناسی مهندسی کامپیوتر گرایش نرم افزار
-											<span class="text-muted h6">در دانشگاه آزاد شیراز</span>
-										</div>
-										<div class="text-muted text-small mb-2">۱۳۹۹ - حالا</div>
-										<div>
-											توسعه سیستماتیک و کاربرد تکنیک هایی که منجر به ایجاد نرم
-											افزار صحیح و قابل اعتماد رایانه می شود
-										</div>
-									</div>
-								</div>
-								<div class="timeline-card timeline-card-success card shadow-sm">
-									<div class="card-body">
-										<div class="h5 mb-1">
-											دیپلم علوم تجربی
-											<span class="text-muted h6">در دبیرستان نگرش</span>
-										</div>
-										<div class="text-muted text-small mb-2">۱۳۹۶ - ۱۳۹۹</div>
-										<div>سه سال در رشته ی علوم تجربی ر دبیرستان نگرش تحصیل کردم</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<footer class="pt-4 pb-4 text-muted text-center d-print-none" id="socials">
-				<div class="container">
-					<div class="my-3">
-						<div class="h4">Alireza Safari</div>
-						<div class="footer-nav">
-							<nav role="navigation">
-								<ul class="nav justify-content-center">
-									<li class="nav-item">
-										<a class="nav-link" href="https://twitter.com/alireza0sfr" target="_blank" title="Twitter">
-											<i class="fab fa-twitter"></i>
-											<span class="menu-title sr-only">Twitter</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" href="https://www.linkedin.com/in/alireza-safari-3b23231bb/" target="_blank" title="Linkedin">
-											<i class="fab fa-linkedin"></i>
-											<span class="menu-title sr-only">Linkedin</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" href="https://www.instagram.com/alireza0sfr" target="_blank" title="Instagram">
-											<i class="fab fa-instagram"></i>
-											<span class="menu-title sr-only">Instagram</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" href="https://github.com/alireza0sfr" target="_blank" title="Github">
-											<i class="fab fa-github"></i>
-											<span class="menu-title sr-only">Github</span>
-										</a>
-									</li>
-								</ul>
-							</nav>
-						</div>
-					</div>
-					<div class="text-small">
-						<div class="mb-1">&copy; All rights reserved.</div>
-					</div>
-				</div>
-			</footer>
-		</body>
 	</div>
 </template>
 
@@ -629,7 +343,7 @@
 
 			}, 1);
 
-			this.modalFunc()
+			this.modalFunc('hire-me')
 		},
 			computed: {
 				currentDate() {
@@ -645,7 +359,6 @@
 		},
 		data() {
 			return {
-				isPersian: false,
 				birthYear: 2002,
 				workXPOptions: [
 					{
@@ -789,24 +502,28 @@
 
 		methods: {
 
-			modalFunc() {
+			modalFunc(id) {
 				// Get the modal
-				var modal = document.getElementById("myModal")
+				var modal = document.getElementById(id)
 
 				// When the user clicks anywhere outside of the modal, close it
 				window.onclick = function (event) {
 					if (event.target == modal) {
-						$(`#myModal`).addClass('close') // trigerring modal animation
+						$(`#${id}`).addClass('close') // trigerring modal animation
 						setTimeout(() => {
-							$('#myModal').css('display', 'none') // close the modal 
+							$(`#${id}`).css('display', 'none') // close the modal 
 							$('.hamburger-overlay').removeClass('is-active') // remove the overlay
 						}, 400);
 					}
 				}
 			},
-			showModal() {
-				$(`#myModal`).removeClass('close')
-				$('#myModal').css('display', 'block')
+			showModal(id) {
+				$(`#${id}`).removeClass('close')
+				if($(`#${id}`).css('display') == 'none') {
+					$(`#${id}`).css('display', 'block')
+				}else {
+					$(`#${id}`).css('display', 'none')
+				}
 			},
 			toLocalDigits(n) {
       const farsiDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"]
