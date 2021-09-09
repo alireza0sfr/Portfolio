@@ -27,13 +27,6 @@ export default {
   name: 'Home',
   mounted() {
     this.initParticles();
-    if(this.$options.name == 'Home') {
-			$('.navbar').addClass('bg-trans')
-    	// $('.navbar').css('cssText', 'background-color: transparent !important');
-		} else {
-			$('.navbar').removeClass('bg-trans')
-    	// $('.navbar').css('cssText', 'background-color: #434a54!important;');
-		}
   },
   data() {
     return {

@@ -43,13 +43,23 @@
 import '../node_modules/bootstrap/dist/js/bootstrap.bundle';
 export default {
   name: 'App',
-  mounted() {
-		setTimeout(() => {
+	watch:{
+    $route (to, from){
+			if(to.fullPath == '/') {
+				this.loadFinished()
+				$('.navbar').addClass('bg-trans')
+			} else {
+				$('.navbar').removeClass('bg-trans')
+			}
+    }
+	},
+  methods: {
+		loadFinished() {
+			setTimeout(() => {
       $('.loading-overlay').removeClass('show');
 			$('.loading-overlay').remove();
     }, 3500);
-	},
-  methods: {
+		},
     showModal() {
       this.$router.push('/portfolio');
       this.overlayToggler();
