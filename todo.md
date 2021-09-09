@@ -9,6 +9,8 @@ projects:
 
 frontend:
     Portfolio:
+        -typed.js for title
+        -particle js for background
         -added time calcuator
         -Done Modal for hire me 
         -Done navbar at top with position fixed

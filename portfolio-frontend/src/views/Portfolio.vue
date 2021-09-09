@@ -1,9 +1,8 @@
 <template>
 	<div id="portfolio">
-
+		<!-- <div id="particles-js"></div> -->
 		<!-- Hire Me Modal -->
 		<div id="hire-me" class="modal">
-
 			<!-- Modal content -->
 			<div class="modal-content">
 				<div class="contant-section px-3 px-lg-4">
@@ -25,57 +24,6 @@
 									</div>
 									<button class="btn btn-primary mt-2 rounded-3" type="submit">Send</button>
 								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- Button trigger modal -->
-		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-			Sign Up
-		</button>
-
-		<!-- Modal -->
-		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-body">
-						<div class="column" id="main">
-							<h1>Sign Up </h1>
-							<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-							<form>
-								<div class="form-group">
-									<label for="exampleInputName">Name</label>
-									<input type="name" class="form-control" id="exampleInputName" placeholder="Name">
-								</div>
-								<div class="form-group">
-									<label for="exampleInputEmail1">E-mail </label>
-									<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail">
-								</div>
-								<div class="form-group">
-									<label for="exampleInputPassword1">Password</label>
-									<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-								</div>
-								<button type="submit" class="btn btn-primary">Sign Up</button>
-							</form>
-						</div>
-						<div>
-							<svg width="67px" height="578px" viewBox="0 0 67 578" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-								<!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
-								<title>Path</title>
-								<desc>Created with Sketch.</desc>
-								<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-									<path d="M11.3847656,-5.68434189e-14 C-7.44726562,36.7213542 5.14322917,126.757812 49.15625,270.109375 C70.9827986,341.199016 54.8877465,443.829224 0.87109375,578 L67,578 L67,-5.68434189e-14 L11.3847656,-5.68434189e-14 Z" id="Path" fill="#F9BC35"></path>
-								</g>
-							</svg>
-						</div>
-						<div class="column" id="secondary">
-							<div class="sec-content">
-								<h2>Welcome Back!</h2>
-								<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-								<button type="button" class="btn btn-primary">Login</button>
 							</div>
 						</div>
 					</div>
@@ -145,10 +93,9 @@
 								<div class="col-md-6">
 									<h2 class="h3 mb-3">About Me</h2>
 									<p>
-										Hi, I'm Alireza. I was born in July 25th, 2002 in my beautiful
-										city, Shiraz. I'm a Full-stack Web Developer and a passionate
-										automated bots designer. I'm also student of Software
-										Engineering at Shiraz Azad University .
+										Hi, I'm Alireza. I was born in July 25th, 2002 in my beautiful city, Shiraz. I'm a Full-stack Web
+										Developer and a passionate automated bots designer. I'm also student of Software Engineering at
+										Shiraz Azad University .
 									</p>
 								</div>
 								<div class="col-md-5 offset-md-1">
@@ -157,7 +104,7 @@
 											<div class="pb-1">Age</div>
 										</div>
 										<div class="col-sm-8">
-											<div class="pb-1 text-secondary">{{age}}</div>
+											<div class="pb-1 text-secondary">{{ age }}</div>
 										</div>
 										<div class="col-sm-4">
 											<div class="pb-1">Email</div>
@@ -259,9 +206,8 @@
 										</div>
 										<div class="text-muted text-small mb-2">2020 - Present</div>
 										<div>
-											The systematic development and application of techniques
-											which lead to the creation of correct and reliable computer
-											software.
+											The systematic development and application of techniques which lead to the creation of correct and
+											reliable computer software.
 										</div>
 									</div>
 								</div>
@@ -273,8 +219,7 @@
 										</div>
 										<div class="text-muted text-small mb-2">2017 - 2020</div>
 										<div>
-											I studied Experimental Science in Negaresh High School for 3
-											years.
+											I studied Experimental Science in Negaresh High School for 3 years.
 										</div>
 									</div>
 								</div>
@@ -328,215 +273,214 @@
 </template>
 
 <script>
-	import AOS from 'aos'
-	import 'aos/dist/aos.css'
-	export default {
-		name: 'Portfolio',
-		mounted() {
-
-			setTimeout(() => {
-				$('.loading-overlay').addClass('collapsed')
-
-				AOS.init({
-				anchorPlacement: 'top-left',
-				duration: 1000})
-
-			}, 1);
-
-			this.modalFunc('hire-me')
-		},
-			computed: {
-				currentDate() {
-					return {
-					year: new Date().getFullYear(),
-					month: new Date().getMonth(),
-					day: new Date().getDate()
-			}
-				},
-				age() {
-					return this.currentDate.year - this.birthYear
-				}
-		},
-		data() {
-			return {
-				birthYear: 2002,
-				workXPOptions: [
-					{
-					position: {
-						value: 'Frontend Developer'
-					},
-					place: {
-						value: 'Nikan',
-					},
-					link: {
-						value: 'https://nikansoft.com',
-						target: '_blank'
-					},
-					startDate: {
-						value: '5/1/2021'
-					},
-					endDate: {
-						value: 'Present'
-					},
-					type: {
-						value: 'Full-Time'
-					},
-					description: {
-						value: "Nikan is a windows accounting software. Nikan develop team and I are currently working on the Nikan Web version Using Vue.js, .NET Core, Bootstrap."
-					},
-					color:{
-						value: 'primary'
-					}
-					},
-					{
-					position: {
-						value: 'Frontend Developer'
-					},
-					place: {
-						value: 'Cafepay',
-					},
-					link: {
-						value: 'https://cafepay.app/',
-						target: '_blank'
-					},
-					startDate: {
-						value: '4/1/2021'
-					},
-					endDate: {
-						value: 'Present'
-					},
-					type: {
-						value: 'Freelance'
-					},
-					description: {
-						value: "Cafepay is a startup that helps people ordering and booking at popular Cafes.I'm helping the developer team to maintain the webapp and add new features to it using Vue.js, Nuxt,js, Bootstrap."
-					},
-					color:{
-						value: 'primary'
-					}
-					},
-					{
-					position: {
-						value: 'Automated Bots Developer'
-					},
-					place: {
-						value: 'UtabPars',
-					},
-					link: {
-						value: 'https://utabpars.com/',
-						target: '_blank'
-					},
-					startDate: {
-						value: '4/1/2021'
-					},
-					endDate: {
-						value: '5/1/2021'
-					},
-					type: {
-						value: 'Freelance'
-					},
-					description: {
-						value: "At UtabPars I built several data scarping bots using Python to extract data from popular Persian sites and built a database out of it."
-					},
-					color:{
-						value: 'primary'
-					}
-					},
-					{
-					position: {
-						value: 'Automated Bots Developer'
-					},
-					place: {
-						value: 'Artacode',
-					},
-					link: {
-						value: 'https://artacode.ir/',
-						target: '_blank'
-					},
-					startDate: {
-						value: '4/1/2021'
-					},
-					endDate: {
-						value: '5/1/2021'
-					},
-					type: {
-						value: 'Freelance'
-					},
-					description: {
-						value: "Built automated robots using python such as data scraper, social media scraper, telegram bots, stock trader bots and etc."
-					},
-					color:{
-						value: 'primary'
-					}
-					},
-					{
-					position: {
-						value: 'Full Stack Developer'
-					},
-					place: {
-						value: 'Ponisha',
-					},
-					link: {
-						value: 'https://ponisha.ir/profile/alireza.safari',
-						target: '_blank'
-					},
-					startDate: {
-						value: '8/1/2020'
-					},
-					endDate: {
-						value: '5/1/2021'
-					},
-					type: {
-						value: 'Freelance'
-					},
-					description: {
-						value: "I started by translating and creating SEO friendly contents then continued by making automated bots and then Used to build and maintain websites using Django, Vue.js, Bootstrap"
-					},
-					color:{
-						value: 'primary'
-					}
-					}
-				],
-			}
-		},
-
-		methods: {
-
-			modalFunc(id) {
-				// Get the modal
-				var modal = document.getElementById(id)
-
-				// When the user clicks anywhere outside of the modal, close it
-				window.onclick = function (event) {
-					if (event.target == modal) {
-						$(`#${id}`).addClass('close') // trigerring modal animation
-						setTimeout(() => {
-							$(`#${id}`).css('display', 'none') // close the modal 
-							$('.hamburger-overlay').removeClass('is-active') // remove the overlay
-						}, 400);
-					}
-				}
-			},
-			showModal(id) {
-				$(`#${id}`).removeClass('close')
-				if($(`#${id}`).css('display') == 'none') {
-					$(`#${id}`).css('display', 'block')
-				}else {
-					$(`#${id}`).css('display', 'none')
-				}
-			},
-			toLocalDigits(n) {
-      const farsiDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"]
-
-      return n.toString().replace(/\d/g, (x) => farsiDigits[x])
+import 'particles.js';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+export default {
+  name: 'Portfolio',
+  mounted() {
+		AOS.init({
+        anchorPlacement: 'top-left',
+        duration: 1000,
+      });
+    this.modalFunc('hire-me');
+  },
+  computed: {
+    currentDate() {
+      return {
+        year: new Date().getFullYear(),
+        month: new Date().getMonth(),
+        day: new Date().getDate(),
+      };
     },
-		}
-	}
+    age() {
+      return this.currentDate.year - this.birthYear;
+    },
+  },
+  data() {
+    return {
+      birthYear: 2002,
+      workXPOptions: [
+        {
+          position: {
+            value: 'Frontend Developer',
+          },
+          place: {
+            value: 'Nikan',
+          },
+          link: {
+            value: 'https://nikansoft.com',
+            target: '_blank',
+          },
+          startDate: {
+            value: '5/1/2021',
+          },
+          endDate: {
+            value: 'Present',
+          },
+          type: {
+            value: 'Full-Time',
+          },
+          description: {
+            value:
+              'Nikan is a windows accounting software. Nikan develop team and I are currently working on the Nikan Web version Using Vue.js, .NET Core, Bootstrap.',
+          },
+          color: {
+            value: 'primary',
+          },
+        },
+        {
+          position: {
+            value: 'Frontend Developer',
+          },
+          place: {
+            value: 'Cafepay',
+          },
+          link: {
+            value: 'https://cafepay.app/',
+            target: '_blank',
+          },
+          startDate: {
+            value: '4/1/2021',
+          },
+          endDate: {
+            value: 'Present',
+          },
+          type: {
+            value: 'Freelance',
+          },
+          description: {
+            value:
+              "Cafepay is a startup that helps people ordering and booking at popular Cafes.I'm helping the developer team to maintain the webapp and add new features to it using Vue.js, Nuxt,js, Bootstrap.",
+          },
+          color: {
+            value: 'primary',
+          },
+        },
+        {
+          position: {
+            value: 'Automated Bots Developer',
+          },
+          place: {
+            value: 'UtabPars',
+          },
+          link: {
+            value: 'https://utabpars.com/',
+            target: '_blank',
+          },
+          startDate: {
+            value: '4/1/2021',
+          },
+          endDate: {
+            value: '5/1/2021',
+          },
+          type: {
+            value: 'Freelance',
+          },
+          description: {
+            value:
+              'At UtabPars I built several data scarping bots using Python to extract data from popular Persian sites and built a database out of it.',
+          },
+          color: {
+            value: 'primary',
+          },
+        },
+        {
+          position: {
+            value: 'Automated Bots Developer',
+          },
+          place: {
+            value: 'Artacode',
+          },
+          link: {
+            value: 'https://artacode.ir/',
+            target: '_blank',
+          },
+          startDate: {
+            value: '4/1/2021',
+          },
+          endDate: {
+            value: '5/1/2021',
+          },
+          type: {
+            value: 'Freelance',
+          },
+          description: {
+            value:
+              'Built automated robots using python such as data scraper, social media scraper, telegram bots, stock trader bots and etc.',
+          },
+          color: {
+            value: 'primary',
+          },
+        },
+        {
+          position: {
+            value: 'Full Stack Developer',
+          },
+          place: {
+            value: 'Ponisha',
+          },
+          link: {
+            value: 'https://ponisha.ir/profile/alireza.safari',
+            target: '_blank',
+          },
+          startDate: {
+            value: '8/1/2020',
+          },
+          endDate: {
+            value: '5/1/2021',
+          },
+          type: {
+            value: 'Freelance',
+          },
+          description: {
+            value:
+              'I started by translating and creating SEO friendly contents then continued by making automated bots and then Used to build and maintain websites using Django, Vue.js, Bootstrap',
+          },
+          color: {
+            value: 'primary',
+          },
+        },
+      ],
+    };
+  },
+
+  methods: {
+    modalFunc(id) {
+      // Get the modal
+      var modal = document.getElementById(id);
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          $(`#${id}`).addClass('close'); // trigerring modal animation
+          setTimeout(() => {
+            $(`#${id}`).css('display', 'none'); // close the modal
+            $('.hamburger-overlay').removeClass('is-active'); // remove the overlay
+          }, 400);
+        }
+      };
+    },
+    showModal(id) {
+      $(`#${id}`).removeClass('close');
+      if ($(`#${id}`).css('display') == 'none') {
+        $(`#${id}`).css('display', 'block');
+      } else {
+        $(`#${id}`).css('display', 'none');
+      }
+    },
+    toLocalDigits(n) {
+      const farsiDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+
+      return n.toString().replace(/\d/g, (x) => farsiDigits[x]);
+    },
+  },
+};
 </script>
 
 <style scoped>
-	@import "../assets/css/portfolio-styles/bootstrap.min.css";
-	@import "../assets/css/portfolio-styles/portfolio.css";
-	@import "../assets/css/font-awesome/css/all.min.css";
-	@import "../assets/css/modal.css";
+@import '../assets/css/portfolio-styles/bootstrap.min.css';
+@import '../assets/css/portfolio-styles/portfolio.css';
+@import '../assets/css/font-awesome/css/all.min.css';
+@import '../assets/css/modal.css';
 </style>
