@@ -1,5 +1,5 @@
 <template>
-	<div id="home">
+	<div class="home">
 		<div class="loading-overlay show"></div>
 		<div id="particles-js"></div>
 		<div class="welcome-card p-1">

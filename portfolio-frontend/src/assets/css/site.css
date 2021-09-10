@@ -1,3 +1,8 @@
+:not(.fab) {
+	font-family: "secondary-font!"!important;
+}
+
+
 .hamburger-overlay {
 	background: hsl(218deg 13% 34% / 38%);
 	display: none;
