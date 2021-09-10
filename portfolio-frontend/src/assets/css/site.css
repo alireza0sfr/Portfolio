@@ -34,7 +34,7 @@
 	height: 100%;
 }
 
-.show {
+.loading-show {
 	animation: unblur 3.5s;
 }
 

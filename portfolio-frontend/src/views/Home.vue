@@ -1,6 +1,6 @@
 <template>
 	<div class="home">
-		<div class="loading-overlay show"></div>
+		<div class="loading-overlay loading-show"></div>
 		<div id="particles-js"></div>
 		<div class="welcome-card p-1">
 			<div>

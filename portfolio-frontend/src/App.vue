@@ -56,7 +56,7 @@ export default {
   methods: {
 		loadFinished() {
 			setTimeout(() => {
-      $('.loading-overlay').removeClass('show');
+      $('.loading-overlay').removeClass('loading-show');
 			$('.loading-overlay').remove();
     }, 3500);
 		},
