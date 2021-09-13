@@ -1,6 +1,5 @@
 <template>
 	<div id="portfolio">
-		<!-- <div id="particles-js"></div> -->
 		<!-- Hire Me Modal -->
 		<div id="hire-me" class="modal">
 			<!-- Modal content -->
@@ -40,7 +39,7 @@
 								<ul class="nav justify-content-center">
 									<li class="nav-item">
 										<a class="nav-link" href="https://twitter.com/Alireza0sfr" target="_blank" title="Twitter">
-											<i class="fab fa-twitter"></i>
+											<i class="fab fa-twitter hover-effect"></i>
 											<span class="menu-title sr-only">Twitter</span>
 										</a>
 									</li>

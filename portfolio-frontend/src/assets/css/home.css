@@ -1,39 +1,61 @@
 .welcome-card {
-  width: 60%;
-  height: 40%;
-  background-color: transparent;
-  border: 1px solid #727272;
-  border-radius: 10px;
-  box-shadow: -3px 4px 13px 0px;
-  color: black;
   position: absolute;
-  top: 250px;
-  left: 249px;
-  display: flex;
+  top: 256px;
+  left: 615px;
+  height: 35%;
+  width: 35%;
 }
 
 .image {
-  border-radius: 5px;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 4px solid #6e6e6e24;
   box-shadow: 0px 0px 5px 0px;
+  padding: 2px;
 }
 
 .btn-main {
   background-color: #393f47;
   color: #fff;
   border-color: #434a54;
-  width: 110px!important;
+  width: 110px !important;
 }
 
 .btn:hover {
-  color: rgba(199, 184, 184, 0.75)!important;
+  color: rgba(199, 184, 184, 0.75) !important;
 }
 
-#particles-js{
-  background-image: url('../background1.jpg');
+.home {
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../background1.jpg');
   background-size: cover;
-  background-color: #434a54;
+}
+
+#particles-js {
+  background: inherit !important;
 }
 
 .bg-trans {
-  background-color: transparent!important;
+  background-color: transparent !important;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+
+}
+
+.buttons a {
+  border-radius: 5px;
+  border: 1px ridge #434a54!important;
+  background-color: #242526!important;
+  padding: 1px;
+  margin: 5px;
+  color: #fff;
+  width: 29px
+}
+
+.buttons a:hover {
+  transform: translateY(-4px)
 }

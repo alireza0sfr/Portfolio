@@ -2,26 +2,35 @@
 	<div class="home">
 		<div class="loading-overlay loading-show"></div>
 		<div id="particles-js"></div>
-		<div class="welcome-card p-1">
+		<div class="welcome-card p-1 text-center">
 			<div>
 				<img class="image hover-effect" src="../assets/images/avatar.jpg" width="200" height="200" />
 			</div>
-			<div class="w-100">
-				<div class="col-lg-8 col-md-7 text-center text-md-start text-white">
-					<h2 class="h1 mt-2">Alireza Safari</h2>
-					<p>Full Stack Developer</p>
-				</div>
-				<div class="buttons">
-					<router-link to="/portfolio" class="btn btn-main shadow-sm mt-1">CV</router-link>
-					<router-link to="/portfolio" class="btn btn-main shadow-sm mt-1">Projects</router-link>
-					<router-link to="/portfolio" class="btn btn-main shadow-sm mt-1">Hire Me</router-link>
-					<router-link to="/portfolio" class="btn btn-main shadow-sm mt-1">CV</router-link>
-				</div>
+			<div class="w-100 text-white">
+				<h2 class="h1 mt-2">Hi! I'm Alireza Safari</h2>
+				<span style="border-right: 2px solid; padding-right: 10px;">Full Stack Developer</span>
+			</div>
+			<div class="buttons">
+				<a class="nav-link" href="https://twitter.com/Alireza0sfr" target="_blank" title="Twitter">
+					<i class="fab fa-twitter"></i>
+					<span class="menu-title sr-only">Twitter</span>
+				</a>
+				<a class="nav-link" href="https://www.linkedin.com/in/alireza-safari-3b23231bb/" target="_blank" title="Linkedin">
+					<i class="fab fa-linkedin"></i>
+					<span class="menu-title sr-only">Linkedin</span>
+				</a>
+				<a class="nav-link" href="https://www.instagram.com/alireza0sfr" target="_blank" title="Instagram">
+					<i class="fab fa-instagram"></i>
+					<span class="menu-title sr-only">Instagram</span>
+				</a>
+				<a class="nav-link" href="https://github.com/alireza0sfr" target="_blank" title="Github">
+					<i class="fab fa-github"></i>
+					<span class="menu-title sr-only">Github</span>
+				</a>
 			</div>
 		</div>
 	</div>
 </template>
-
 <script>
 export default {
   name: 'Home',

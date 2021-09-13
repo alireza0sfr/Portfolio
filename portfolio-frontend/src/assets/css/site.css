@@ -2,6 +2,10 @@
 	font-family: "secondary-font!"!important;
 }
 
+* {
+	box-sizing: border-box;
+}
+
 
 .hamburger-overlay {
 	background: hsl(218deg 13% 34% / 38%);
@@ -21,9 +25,8 @@
 }
 
 .loading-overlay {
-	background-image: url('../background1.jpg');
+	background: inherit;
 	background-size: cover;
-	/* background: inherit; */
 	z-index: 99999;
 	position: fixed;
 	top: 0;
