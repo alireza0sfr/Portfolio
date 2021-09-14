@@ -15,8 +15,8 @@ frontend:
         -Done Modal for hire me 
         -Done navbar at top with position fixed
         -Done make home page
-        -loading for all pages
         -refactor the code
+        -loading and modal mixin
         -new modal design
         -404 Not found for other pages
         -project list which there is sneak peak of monify but its grayed out

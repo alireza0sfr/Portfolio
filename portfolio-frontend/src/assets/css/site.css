@@ -8,7 +8,7 @@
 
 
 .hamburger-overlay {
-	background: hsl(218deg 13% 34% / 38%);
+	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) );
 	display: none;
 	z-index: 100;
 	position: fixed;

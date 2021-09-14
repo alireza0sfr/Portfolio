@@ -1,7 +1,7 @@
 <template>
 	<div class="home">
-		<div class="loading-overlay loading-show"></div>
 		<div id="particles-js"></div>
+		<div class="loading-overlay loading-show"></div>
 		<div class="welcome-card p-1 text-center">
 			<div>
 				<img class="image hover-effect" src="../assets/images/avatar.jpg" width="200" height="200" />
